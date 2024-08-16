@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a escala inicial e a largura da visualização para dispositivos móveis -->
+    <link rel="stylesheet" href="/static/css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <title>Cinéfilos.com</title> <!-- Define o título da página -->
+</head>
+<body>
+  <!-- Início do Cabeçalho -->
+    <header>
+        <h1>Cinéfilos.com</h1>
+        <nav>
+            <div>
+                <a href="/" class="home">
+                HOME >
+            </a>
+            </div>
+            <div>
+                <a href="/adicionar_filme" class="ad">
+                    ADICIONAR FILME >
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- Fim do Cabeçalho -->
+<section class="section1">
+  <h2 class="tit1">Lista de Filmes</h2>
+    <ul>
+        {% for filme in filmes %}
+        <li class="listac">{{ filme[1] }} - {{ filme[2] }} - {{ filme[3] }} <!-- Exibe as informações do filme, incluindo o nome, data de lançamento e produtor/diretor.-->
+            <ul>
+                <li><a href="/editar_filme/{{ loop.index0 }}">Editar</a></li> <!-- Link para editar o filme -->
+                <li><a href="/apagar_filme/{{ loop.index0 }}">Apagar</a></li> <!-- Link para apagar o filme -->
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+     <section class="bot">
+        <a href="/adicionar_filme">
+            <button class="button">
+              <span>ADICIONAR FILME</span>
+            </button>
+        </a>
+    </section>
+<footer>
+    <h3>
+        Cinéfilos.com
+    </h3>
+    <!-- Redes Sociais -->
+    <div class="siga">
+        <a href="https://www.facebook.com/campaign/landing.php?&campaign_id=1661784632&extra_1=s|c|320269324053|e|facebook|&placement=&creative=320269324053&keyword=facebook&partner_id=googlesem&extra_2=campaignid%3D1661784632%26adgroupid%3D63686352403%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-541132862%26loc_physical_ms%3D9100673%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gad_source=1&gclid=Cj0KCQjwltKxBhDMARIsAG8KnqUr_a6fDs4EVBT7Kr6jePjJvocKkLFNB8TUQBr5DBzAdXYSshUPWXYaAoYDEALw_wcB">
+            <img class="face" src="static/img/facebook.png" alt="facebook">
+        </a>
+        <a href="https://twitter.com/login?lang=pt">
+            <img class="twitter" src="static/img/twitter.png" alt="twitter">
+        </a>
+        <a href="https://br.linkedin.com/">
+            <img class="linkedin" src="static/img/linkedin.png" alt="linkedin">
+        </a>
+        <a href="https://www.instagram.com/">
+            <img class="insta" src="static/img/instagram.png" alt="instagram">
+        </a>
+        <a href="https://www.youtube.com/">
+            <img class="you" src="static/img/youtube.png" alt="youtube">
+        </a>
+    </div>
+</footer>
+</body>
+</html>
