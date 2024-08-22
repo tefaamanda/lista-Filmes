@@ -29,9 +29,9 @@
     <!-- Fim do Cabeçalho -->
 <section class="section1">
   <h2 class="tit1">Lista de Filmes</h2>
-    <ul>
+    <ul class="listafilme">
         {% for filme in filmes %}
-        <li class="listac">{{ filme[1] }} - {{ filme[2] }} - {{ filme[3] }} <!-- Exibe as informações do filme, incluindo o nome, data de lançamento e produtor/diretor.-->
+        <li class="listac">{{ filme[1] }} • {{ filme[2] }} • {{ filme[3] }} <!-- Exibe as informações do filme, incluindo o nome, data de lançamento e produtor/diretor.-->
             <ul>
                 <li><a href="/editar_filme/{{ loop.index0 }}">Editar</a></li> <!-- Link para editar o filme -->
                 <li><a href="/apagar_filme/{{ loop.index0 }}">Apagar</a></li> <!-- Link para apagar o filme -->
@@ -47,7 +47,7 @@
             </button>
         </a>
     </section>
-  </br></br></br></br></br></br></br></br>
+    </br></br></br></br></br></br></br></br>
 <footer>
     <h3>
         Cinéfilos.com
